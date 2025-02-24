@@ -10,7 +10,7 @@ def ip_network_report():
     print(container_ip_network)
 
 #Checking for collision after putting each IP adress to a list.
-def collision_checker(file_path):
+def check_collision(file_path):
 
     networks = []
 
@@ -38,7 +38,7 @@ def collision_checker(file_path):
             print("No collisions found.")
     except FileNotFoundError:
         print(f"File not found: {file_path}", file=sys.stderr)
-        sys.exit()
+        sys.exit(1)
 
 def main():
     parser = argparse.ArgumentParser(
@@ -50,8 +50,8 @@ def main():
     )
     args = parser.parse_args()
 
-    if args.collision_checker:
-        collision_checker(args.collision_checker)
+    if args.check_collision:
+        check_collision(args.check_collision)
     else:
         ip_network_report()
 
