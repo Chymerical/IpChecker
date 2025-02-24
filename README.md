@@ -1,4 +1,4 @@
-# IpChecker
+# ip-reporter
 
 ## An IP reporting tool with collision check
 
